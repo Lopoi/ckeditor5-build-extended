@@ -32,6 +32,7 @@ import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 import Font from '@ckeditor/ckeditor5-font/src/font';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
+import HtmlEmbed from '@ckeditor/ckeditor5-html-embed/src/htmlembed';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -40,6 +41,7 @@ ClassicEditor.builtinPlugins = [
 	Essentials,
 	UploadAdapter,
 	Autoformat,
+	HtmlEmbed,
 	Bold,
 	Italic,
 	BlockQuote,
@@ -91,7 +93,9 @@ ClassicEditor.defaultConfig = {
 			'insertTable',
 			'mediaEmbed',
 			'undo',
-			'redo'
+			'redo',
+			'|',
+			'htmlEmbed'
 		]
 	},
 	image: {
@@ -124,6 +128,16 @@ ClassicEditor.defaultConfig = {
 			'|',
 			'imageTextAlternative'
 		]
+	},
+	htmlEmbed: {
+		showPreviews: true,
+		sanitizeHtml: ( inputHtml ) => {
+			const outputHtml = sanitize( inputHtml );
+			return {
+				html: outputHtml,
+				hasChanged: true
+			};
+		}
 	},
 	table: {
 		contentToolbar: [

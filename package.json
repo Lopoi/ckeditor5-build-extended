@@ -74,6 +74,7 @@
   "dependencies": {
     "@ckeditor/ckeditor5-alignment": "^23.0.0",
     "@ckeditor/ckeditor5-font": "^23.0.0",
+    "@ckeditor/ckeditor5-html-embed": "^28.0.0",
     "@ckeditor/ckeditor5-image": "^23.0.0"
   }
 }

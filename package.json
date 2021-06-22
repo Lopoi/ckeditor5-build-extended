@@ -1,6 +1,6 @@
 {
   "name": "ckeditor5-build-extended",
-  "version": "23.0.2",
+  "version": "23.0.1",
   "description": "The classic editor build of CKEditor 5 with some extra features.",
   "keywords": [
     "ckeditor5-build",
@@ -74,7 +74,6 @@
   "dependencies": {
     "@ckeditor/ckeditor5-alignment": "^23.0.0",
     "@ckeditor/ckeditor5-font": "^23.0.0",
-    "@ckeditor/ckeditor5-html-embed": "^28.0.0",
     "@ckeditor/ckeditor5-image": "^23.0.0"
   }
 }

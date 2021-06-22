@@ -32,7 +32,6 @@ import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 import Font from '@ckeditor/ckeditor5-font/src/font';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
-import HtmlEmbed from '@ckeditor/ckeditor5-html-embed/src/htmlembed';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -64,7 +63,6 @@ ClassicEditor.builtinPlugins = [
 	Font,
 	Alignment,
 	ImageResize,
-	HtmlEmbed,
 ];
 
 // Editor configuration.
@@ -93,24 +91,8 @@ ClassicEditor.defaultConfig = {
 			'insertTable',
 			'mediaEmbed',
 			'undo',
-			'redo',
-			'|',
-			'htmlEmbed'
+			'redo'
 		]
-	},
-	htmlEmbed: {
-		showPreviews: true,
-		sanitizeHtml: ( inputHtml ) => {
-			// Strip unsafe elements and attributes, e.g.:
-			// the `<script>` elements and `on*` attributes.
-			const outputHtml = sanitize( inputHtml );
-
-			return {
-				html: outputHtml,
-				// true or false depending on whether the sanitizer stripped anything.
-				hasChanged: true
-			};
-		}
 	},
 	image: {
 		styles: [
